@@ -18,10 +18,10 @@ class SheetData:
                     "date": self.today,
                     "time": self.time,
                     "exercise": data["name"],
-                    "duration": data["duration_min"],
-                    "calories": data["nf_calories"]
+                    "duration": str(int(data["duration_min"])),
+                    "calories": str(data["nf_calories"])
                 }
             }
             self.sheet_response = requests.post(url=self.sheety_endpoint, json=sheet_input)
             print(self.sheet_response.text)
-            print("Data 📊 Added Successfully")
+            print("sheet data 📊 Added Successfully")
