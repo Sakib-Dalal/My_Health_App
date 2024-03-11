@@ -13,7 +13,7 @@ header = {
     "X-USER-TOKEN": PIXELA_TOKEN
 }
 
-response = requests.delete(url=graph_endpoint, headers=header)
+response = requests.post(url=graph_endpoint, headers=header)
 response.raise_for_status()
 print(response.text)
 
